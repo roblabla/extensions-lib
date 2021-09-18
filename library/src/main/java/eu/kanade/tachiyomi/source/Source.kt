@@ -1,5 +1,6 @@
 package eu.kanade.tachiyomi.source
 
+import eu.kanade.tachiyomi.source.model.Music
 import eu.kanade.tachiyomi.source.model.Page
 import eu.kanade.tachiyomi.source.model.SChapter
 import eu.kanade.tachiyomi.source.model.SManga
@@ -40,5 +41,14 @@ interface Source {
      * @param chapter the chapter.
      */
     fun fetchPageList(chapter: SChapter): Observable<List<Page>>
+
+    /**
+     * Returns an observable with the list of music to play for this chapter.
+     *
+     * @param chapter the chapter.
+     */
+    fun fetchMusicList(chapter: SChapter): Observable<List<Music>> {
+        return Observable.empty()
+    }
 
 }
